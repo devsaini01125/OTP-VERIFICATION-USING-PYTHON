@@ -1,0 +1,36 @@
+/* Add this CSS to your mainpage.css stylesheet or in a <style> tag within your HTML file */
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, #800080, #FFD700); /* Dark Sky Blue background color */
+    margin: 0; /* Remove default margin */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    box-sizing: border-box; /* Apply box-sizing property */
+}
+
+.main-content {
+    text-align: center;
+}
+
+p {
+    font-size: 24px; /* Increase font size */
+    color: #333; /* Text color */
+}
+
+.home-button {
+    background-color: #8e20a9;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 10px 20px; /* Add padding to the button for spacing */
+    margin-top: 20px; /* Add margin-top for spacing */
+}
+
+.home-button:hover {
+    background-color: #6baa12;
+}

@@ -1,0 +1,18 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Page</title>
+    <link rel="stylesheet" href="{% static 'mainpage.css' %}">
+</head>
+<body>
+    <div class="container">
+        <div class="main-content">
+            <p>Welcome to the page</p>
+            <button class="home-button" onclick="location.href = '{% url 'index' %}';">Home</button>
+        </div>
+    </div>
+</body>
+</html>

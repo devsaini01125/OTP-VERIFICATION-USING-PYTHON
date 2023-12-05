@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verify Email</title>
+    <link rel="stylesheet" href="{% static 'index.css' %}">
+</head>
+<body>
+    <div class="container">
+        <div class="verify-email-box">
+            <h2>Verify Email</h2>
+            <form method="post" action="{% url 'index' %}">
+                {% csrf_token %}
+                {% if not email_value %}
+                <!-- Step 1: Enter Email and Get Code -->
+                <input type="email" name="email" placeholder="Enter Email" required>
+                <button type="submit" id="getCode">Get OTP</button>
+                {% endif %}
+                {% if email_value %}
+                <!-- Step 2: Enter OTP, Verify OTP, Resend OTP -->
+                <input type="text" name="otp" placeholder="Enter OTP" required>
+                <button type="submit" id="verifyOTP">Verify OTP</button>
+                 <button type="submit" id="resendOTP" formaction="{% url 'index' %}">Resend OTP</button>
+                {% endif %}
+            </form>
+            {% if success_message %}
+            <p class="success-message">{{ success_message }}</p>
+            {% endif %}
+            {% if error_message %}
+            <p class="error-message">{{ error_message }}</p>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>
